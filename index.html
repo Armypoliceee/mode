@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Reset Button 😎</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    #resetBtn {
+      font-size: 22px;
+      padding: 15px 30px;
+      background-color: #fff176;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #resetBtn:hover {
+      transform: scale(1.1) rotate(-2deg);
+      background-color: #ffee58;
+    }
+
+    #gifContainer img {
+      width: 320px;
+      height: auto;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    #quote {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #4a148c;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mood Reset Machine 🛠️😄</h1>
+  <button id="resetBtn">Click for a Vibe Reset 🎉</button>
+
+  <div id="gifContainer"></div>
+  <div id="quote"></div>
+
+  <script>
+    const gifs = [
+      "https://media.giphy.com/media/JYsWwF82EGnpC/giphy.gif",
+      "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif",
+      "https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif",
+      "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+      "https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif",
+      "https://media.giphy.com/media/xUOxfjsWv5GvWQVrIQ/giphy.gif"
+    ];
+
+    const quotes = [
+      "You dropped this 👉 👑",
+      "Hydrate. Smile. Touch grass.",
+      "You’re not a mess. You’re a masterpiece in progress.",
+      "Remember: Even Google needs to refresh sometimes.",
+      "Everything is temporary. Except your awesomeness.",
+      "Pause. Breathe. Pop a balloon. (Mentally, please.)"
+    ];
+
+    const btn = document.getElementById('resetBtn');
+
+    btn.addEventListener('click', () => {
+      const gif = gifs[Math.floor(Math.random() * gifs.length)];
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+      document.getElementById('gifContainer').innerHTML = `<img src="${gif}">`;
+      document.getElementById('quote').textContent = quote;
+
+      // Random effect on button
+      btn.style.transform = `rotate(${Math.floor(Math.random() * 20 - 10)}deg) scale(${Math.random() * 0.4 + 0.9})`;
+    });
+  </script>
+
+</body>
+</html>
